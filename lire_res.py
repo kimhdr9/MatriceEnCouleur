@@ -1,5 +1,5 @@
-from constantes.html import deb,fin, couleur,data_fin,data_deb
-from constantes.html import EnteteHtml,PiedHtml,couleur2
+from biblio.html import deb,fin, couleur,data_fin,data_deb
+from biblio.html import EnteteHtml,PiedHtml,couleur2
 
 Fichier='resultats-7.txt'
 
