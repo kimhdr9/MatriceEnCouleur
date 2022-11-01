@@ -1,12 +1,30 @@
 import numpy as np
 import random
 
-N=10
+N=5
 M=N
-iterations=10000000
+iterations=1000000
 
 for _ in range(iterations):
-    
+    """
+    ensemble des nombres entre 1 et N*N
+    """
+    selection=[]
+    """
+    alimente selection
+    """
+    matrice=False
+    """
+    pas de doublon dans la matrice
+    """
+    if matrice :
+        for i in range(1,M*M+1): selection.append(i)
+    else :
+        """
+        pas de doublon dans une ligne
+        """
+        for i in range(1,M+1) : selection.append(i) 
+
     matrix = np.zeros((N,N))
 
 
