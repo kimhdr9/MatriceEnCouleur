@@ -1,4 +1,4 @@
-from biblio.html import deb,fin, couleur,data_fin,data_deb
+from biblio.html import deb,fin,data_fin
 from biblio.html import EnteteHtml,PiedHtml,couleur2
 
 Fichier='resultats-7.txt'
