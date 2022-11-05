@@ -8,9 +8,15 @@ création de données bidon
 """
 
 
-colors = ['#FFFFFF','#FA5858','#FA8258','#FAAC58','#F7D358','#F4FA58','#D0FA58','#82FA58']
+# colors = ['#FFFFFF','#FA5858','#FA8258','#FAAC58','#F7D358','#F4FA58','#D0FA58','#82FA58']
 
-def Creation_dico(N=3,M=7) :
+colors = ['#FFFFFF','#FF0000','#FFFF00','#40FF00','#00FF40','#00BFFF','#4000FF','#DF013A']
+
+def Creation_dico(N=3,M=7,modulo=7) :
+    """
+    test la valeur de modulo
+    """
+    if ( modulo <2 or modulo > 7) : modulo=7
     """
     creation d'un dictionnaire forme de N lignes et M colonnes
     """
@@ -23,7 +29,7 @@ def Creation_dico(N=3,M=7) :
             formé du nombre modulo 7 mais de 1 à 7
             et de la couleur associée 
             """
-            val=(random.randint(1,M) % 7) +1
+            val=(random.randint(1,M) % modulo) +1
             col=colors[val]
             ligne.append([val,col])
         """
@@ -67,9 +73,9 @@ rectangle affiche un rectangle de dimension paramétré
 
 """
 
-@app.route('/rectangle/<int:hauteur>/<int:largeur>')
-def rectangle(hauteur,largeur):
-    dico = Creation_dico(hauteur,largeur)
+@app.route('/rectangle/<int:hauteur>/<int:largeur>/<int:modulo>')
+def rectangle(hauteur,largeur,modulo):
+    dico = Creation_dico(hauteur,largeur,modulo)
 
     return render_template('carre.html', result=dico)
 
